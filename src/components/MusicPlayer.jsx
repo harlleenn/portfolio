@@ -1,4 +1,5 @@
 import React from 'react'
+import { Play } from 'lucide-react'
 
 export default function MusicPlayer() {
     return (
@@ -8,6 +9,7 @@ export default function MusicPlayer() {
             <div>
               <h1 className="text-sm font-semibold">Portfolio</h1>
               <p className="text-xs text-gray-400">Harleen Kaur Kukreja</p>
+              <div className='flex justify-center'><Play size={20}/></div>
             </div>
           </div>
         </div>

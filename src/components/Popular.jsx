@@ -1,4 +1,5 @@
 import React from 'react'
+import { Play } from 'lucide-react'
 
 export default function Popular() {
   return (
@@ -40,13 +41,19 @@ export default function Popular() {
 
          <div className="bg-white dark:bg-pink-800 border dark:border-gray-700 rounded-lg shadow-sm p-4">
             <div className="h-40 bg-gray-200 rounded mb-4 ">Image</div>
-            <h4 className="text-lg font-bold text-black dark:text-white">Yum-finds</h4>
+            <div className="text-lg font-bold text-black dark:text-white">Yum-finds</div>
+            <div className='rounded bg-black'>
+            <Play size={20} color='green'/>
+            </div>
              <p className="text-gray-700 dark:text-gray-200">Website • 2025</p>
         </div>
 
         <div className="bg-white dark:bg-blue-800 border dark:border-gray-700 rounded-lg shadow-sm p-4">
             <div className="h-40 bg-gray-200 rounded mb-4">Image</div>
-            <h4 className="text-lg font-bold text-black dark:text-white">Job finder</h4>
+            <div className="text-lg font-bold text-black dark:text-white">Job finder</div>
+            <div className='rounded bg-black'>
+            <Play size={20} color='green'/>
+            </div>
             <p className="text-gray-700 dark:text-gray-200">Website • 2024</p>
         </div>
         </div>
