@@ -1,12 +1,15 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}", // update based on your project
   ],
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
+        bevan: ['Bevan', 'cursive'],
+        homemade: ['"Homemade Apple"', 'cursive'],
+        leckerli: ['"Leckerli One"', 'cursive'],
       },
     },
   },
