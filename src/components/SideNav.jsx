@@ -5,7 +5,7 @@ import Spotify from '../images/Spotify.png'
 export default function SideNav() {
   return (
 
-    <div className=' flex flex-col  w-64 fixed bottom-0  bg-blend-soft-light  bg-gray-700  text-white left-0    top-0 '>
+    <div className=' flex flex-col  w-64 fixed bottom-0  bg-blend-soft-light  bg-gray-950  text-white left-0   top-0 '>
         <div className='m-5 text-base/8 '>
        
             <div className="font-sans font-semibold text-xl mt-3 mb-3  flex">
@@ -15,19 +15,19 @@ export default function SideNav() {
 
             <hr></hr> 
 
-                <div className='flex flex-col mt-4 '>
-                    <div className='flex' >  
-                         <Home size={20} />
-                         <span className='text-color-white font-poppins ml-2 '>Home</span>
+                <div className='flex flex-col mt-4  '>
+                    <div className='flex  hover:bg-gray-800 ' >  
+                         <Home size={20} className='-mb-3' />
+                         <span className='text-color-white font-medium ml-2 '>Home</span>
                          </div>
 
-                    <div className='flex '>
+                    <div className='flex  hover:bg-gray-800 '>
                     <Search size={20}/>
-                     <span className='text-color-white font-poppins ml-2'> Search</span>  
+                     <span className='text-color-white font-medium ml-2 '> Search</span>  
                     </div>
-                    <div className='flex' >
+                    <div className='flex  hover:bg-gray-800' >
                          <Library size={20}/>
-                    <span className='text-color-white font-poppins ml-2 mb-5'>Library</span>
+                    <span className='text-color-white font-medium ml-2 space-x-5 '>Library</span>
                     </div>
                 </div>
 
