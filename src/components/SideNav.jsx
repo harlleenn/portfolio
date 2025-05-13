@@ -1,16 +1,22 @@
 import React from 'react'
 import { Home,  Search , Library  } from 'lucide-react';
+import Spotify from '../images/Spotify.png'
 
 export default function SideNav() {
   return (
 
     <div className=' flex flex-col  w-64 fixed bottom-0  bg-blend-soft-light  bg-gray-700  text-white left-0    top-0 '>
         <div className='m-5 text-base/8 '>
-            <hr></hr>
-            <div className="font-poppins mt-3 mb-3">Spotify</div>  
+       
+            <div className="font-sans font-semibold text-xl mt-3 mb-3  flex">
+            <img src={Spotify} alt='spotify' className='w-8 mr-2'/>
+            Spotify 
+            </div>  
+
             <hr></hr> 
-                <div className=''>
-                    <div className='flex mt-2' >  
+
+                <div className='flex flex-col mt-4 '>
+                    <div className='flex' >  
                          <Home size={20} />
                          <span className='text-color-white font-poppins ml-2 '>Home</span>
                          </div>
@@ -19,11 +25,12 @@ export default function SideNav() {
                     <Search size={20}/>
                      <span className='text-color-white font-poppins ml-2'> Search</span>  
                     </div>
-                    <div className='flex mt-2' >
+                    <div className='flex' >
                          <Library size={20}/>
-                    <span className='text-color-white font-poppins ml-2'>Library</span>
+                    <span className='text-color-white font-poppins ml-2 mb-5'>Library</span>
                     </div>
                 </div>
+
                 <div>
                     <hr></hr>
                     <div className='mt-3 mb-3 font-poppins'>Skills</div>
