@@ -3,54 +3,60 @@ import { Play } from 'lucide-react'
 import food from '../images/food.png'
 
 export default function Popular() {
- const [message,setMessage] = useState("Follow")
-const [following , setFollowing] = useState(false);
+const [following , setFollowing] = useState(true);
+
+
 const handleFollow = () => {
-  setFollowing(!following);
-
-  if(following === true){
-    setMessage("Following")
-
-  }
+  setFollowing(!following)
 }
+
+
+
 
   return (
     <div className=' absolute bg-gray-900  p-4 left-64 mt-11  top-64  text-white'>
       <div className='flex flex-col space-y-3'>
         <div className='flex flex-row'>
-        <div><Play size={40} color='black' className='rounded-3xl p-2 bg-green-700'/></div>
+        <div><Play size={40}   className='rounded-3xl p-2 bg-green-700 text-black '/></div>
 
-            <div className='flex ml-5 mr-10'><button className='pl-8 pr-8 border-2 border-white' onClick={handleFollow}>{message}</button></div>
+            <div className='flex ml-5 mr-10'><button className={`pl-8 pr-8 border-2 border-white transition duration-100 
+            ${following ? " text-white" : "bg-green-700 text-white"}`}   
+                   onClick={handleFollow}>{following ? "Follow" : "Following"}</button>
+            </div>
             <div className='flex  pl-8 pr-8 border-2 border-white'>
-            <button>Download Cv</button>
+            <button >Download Cv</button>
             </div>
         </div>
         
 <div className='mt-10 space-x-9'>
     <div className='font-sans font-semibold text-xl mt-5  mb-5'>Popular</div>
 
-    <div className='grid grid-cols-4 gap-2 items-  hover:bg-gray-800'>
+    <div className='grid grid-cols-4 gap-2 items-  hover:bg-gray-800 p-2' >
+    <div  className='text-sm text-gray-300 '> 1</div>
       <div className='text-sm text-gray-300'>Email:</div>
       <div className='text-sm text-gray-300'>harleen.kukrejaa@gmail.com</div>
-      <div className=' flex justify-evenly m-1'> 6:34</div>
+      <div className=' text-sm text-gray-300 flex justify-evenly m-1'> 6:34</div>
    </div>
 
-  <div className='grid grid-cols-4 gap-2 items-center  hover:bg-gray-800'>
+  <div className='grid grid-cols-4 gap-2 items-center  hover:bg-gray-800 p-2' >
+  <div className='text-sm text-gray-300 ' > 2 </div>
     <div className='text-sm text-gray-300'>Phone:</div>
     <div className='text-sm text-gray-300'>9654793003</div>
     <div className='text-sm text-gray-300 flex justify-evenly m-1'> 3:34</div>
   </div>
 
-  <div className='grid grid-cols-4 gap-2 items-center  hover:bg-gray-800 '>
-    <div>LinkedIn:</div>
-    <div>harlleenn</div>
-    <div className='flex justify-evenly m-1'> 2:84</div>
+  <div className='grid grid-cols-4 gap-2 items-center  hover:bg-gray-800 p-2 '>
+  <div className='text-sm text-gray-300'> 3</div>
+    <div className='text-sm text-gray-300'>LinkedIn:</div>
+    <div  className='text-sm text-gray-300'>harlleenn</div>
+    <div className='text-sm text-gray-300 flex justify-evenly m-1'> 2:84</div>
   </div>
 
-  <div className='grid grid-cols-4 gap-2 items-center hover:bg-gray-800'>
-    <div>Github:</div>
-    <div className=''>https:harlleenn</div>
-    <div className='flex justify-evenly m-1'> 5:34</div>
+  <div className='grid grid-cols-4 gap-2 items-center hover:bg-gray-800 p-2'>
+  <div className='text-sm text-gray-300 ' > 4</div>
+    <div className='text-sm text-gray-300'>Github:</div>
+    <div className='text-sm text-gray-300'>https:harlleenn</div>
+    <div className='text-sm text-gray-300 flex justify-evenly m-1'> 5:34</div>
   </div>
 </div>
       </div>
@@ -59,7 +65,7 @@ const handleFollow = () => {
         <div className="items-center  text-2xl font-bold text-white mb-6">Popular Projects</div>
   
       <div className="grid md:grid-cols-5 gap-2">
-         <div className="bg-gray-950 rounded-lg  p-4">
+         <div className="bg-gray-800 rounded-lg  p-4  hover:bg-gray-700">
             <div className="h-40 rounded mb-4 "><img src={food} alt='food' className="h-40"/></div>
             <div className="text-lg font-bold text-black dark:text-white">Yum-finds</div>
             <div className='rounded-3xl p-4 float-right bg-gradient-to-r from-green-400 to-green-900 '>
@@ -68,7 +74,7 @@ const handleFollow = () => {
              <div className="text-gray-700 dark:text-gray-200">Website • 2025</div>
         </div>
 
-        <div className=" bg-gray-950 rounded-lg p-4">
+        <div className=" bg-gray-800 rounded-lg p-4  hover:bg-gray-700">
             <div className="h-40 bg-gray-200 rounded mb-4"> <img src={food} alt='food' className ="h-40" /> </div>
             <div className="text-lg font-bold text-black dark:text-white">Job finder</div>
             <div className='rounded-3xl p-4 float-right bg-gradient-to-r from-green-400 to-green-900'>
