@@ -1,15 +1,16 @@
 import React, {  useState } from 'react'
 import { Play } from 'lucide-react'
-import food from '../images/food.png'
+import yumFinds from '../images/yumFinds.png'
+import abstract from '../images/abstract.jpg'
 
 export default function Popular() {
 const [following , setFollowing] = useState(true);
 
 
+
 const handleFollow = () => {
   setFollowing(!following)
 }
-
 
 
 
@@ -29,7 +30,7 @@ const handleFollow = () => {
         </div>
         
 <div className='mt-10 space-x-9'>
-    <div className='font-sans font-semibold text-xl mt-5  mb-5'>Popular</div>
+    <div className='font-sans font-semibold text-xl mt-5 mb-5 hover:underline'>Popular</div>
 
     <div className='grid grid-cols-4 gap-2 items-  hover:bg-gray-800 p-2' >
     <div  className='text-sm text-gray-300 '> 1</div>
@@ -62,23 +63,23 @@ const handleFollow = () => {
       </div>
 
     <div className='mt-10 space-x-9'>
-        <div className="items-center  text-2xl font-bold text-white mb-6">Popular Projects</div>
+        <div className="items-center font-sans font-semibold text-xl  text-white mb-6 hover:underline">Popular Projects</div>
   
       <div className="grid md:grid-cols-5 gap-2">
-         <div className="bg-gray-800 rounded-lg  p-4  hover:bg-gray-700">
-            <div className="h-40 rounded mb-4 "><img src={food} alt='food' className="h-40"/></div>
+         <div className=" rounded-lg  p-4  hover:bg-gray-700">
+            <div className="h-40   bg-gray-200 rounded mb-4 "><img src={yumFinds} alt='food' className="h-35 "/></div>
             <div className="text-lg font-bold text-black dark:text-white">Yum-finds</div>
             <div className='rounded-3xl p-4 float-right bg-gradient-to-r from-green-400 to-green-900 '>
-            <a href='https://pokemonfinderr.netlify.app/' target='_blank'  rel="noreferrer" ><Play size={20} color='white'/> </a>
+            <a href='https://yumfinds.netlify.app/' target='_blank'  rel="noreferrer" ><Play size={20} color='black'/> </a>
             </div>
              <div className="text-gray-700 dark:text-gray-200">Website • 2025</div>
         </div>
 
-        <div className=" bg-gray-800 rounded-lg p-4  hover:bg-gray-700">
-            <div className="h-40 bg-gray-200 rounded mb-4"> <img src={food} alt='food' className ="h-40" /> </div>
+        <div className="  rounded-lg p-4  hover:bg-gray-800">
+            <div className="h-40 bg-gray-200 rounded mb-4"> <img src={yumFinds} alt='food' className ="h-35" /> </div>
             <div className="text-lg font-bold text-black dark:text-white">Job finder</div>
-            <div className='rounded-3xl p-4 float-right bg-gradient-to-r from-green-400 to-green-900'>
-            <a href='https://pokemonfinderr.netlify.app/' target='_blank'  rel="noreferrer" ><Play size={20} color='white'/></a>
+            <div className='rounded-3xl p-4 float-right  bg-gradient-to-r from-green-400 to-green-900' >
+            <a href='https://pokemonfinderr.netlify.app/' target='_blank'  rel="noreferrer" ><Play size={20} color='black'/></a>
             </div>
             <div className="text-gray-700 dark:text-gray-200">Website • 2024</div>
         </div>
@@ -87,10 +88,10 @@ const handleFollow = () => {
 
     <div className=" from-green-950 to-blue-300 text-white h-screen ">
         <div className=" mt-10 space-x-9">
-          <div className="text-2xl font-bold mb-4">About</div>
+          <div className="font-sans font-semibold text-xl  text-white  hover:underline mb-4">About</div>
             <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-gray-800 rounded-lg p-4 relative overflow-visible hover:bg-gray-700">
-                  <div className="h-64 w-full bg-gray-600 rounded mb-4 flex items-center justify-center text-white">Image</div>
+                  <div className="mb-5  rounded  flex items-center justify-center text-white"><img src={abstract} alt='abstract' /></div>
                     <div className="absolute top-4 p-4 m-4 right-4 bg-blue-500 text-white rounded-full
                         w-16 h-16 flex items-center justify-center text-center text-sm font-semibold">
                      1+ Years 
@@ -106,7 +107,7 @@ const handleFollow = () => {
                 </div>
 
           <div className='mr-8 -mt-10'>
-            <div className="text-2xl font-bold mb-4">Education</div>
+            <div className="font-sans font-semibold text-xl  text-white  hover:underline mb-4">Education</div>
               <div className="flex items-start gap-4 bg-gray-800 p-4 rounded-lg mb-5 hover:bg-gray-700">
                 <div className="bg-gray-900 text-white px-5 py-2 rounded text-center font-bold">
                 <div className="text-sm">SEP</div>

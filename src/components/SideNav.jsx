@@ -33,7 +33,7 @@ export default function SideNav() {
 
                 <div>
                     <hr></hr>
-                    <div className='mt-3 mb-3 font-poppins'>Skills</div>
+                    <div className='mt-3 mb-3 text-color-white font-medium'>Skills</div>
                     <hr></hr>
                 </div>
                 <div >
@@ -46,7 +46,7 @@ export default function SideNav() {
                 </div>
                 <div>
                     <hr></hr>
-                    <div className='mt-3 mb-3'>Profiences</div>
+                    <div className='mt-3 mb-3 text-color-white font-medium'>Profiences</div>
                     <hr></hr>
                 </div>
                 <div>
