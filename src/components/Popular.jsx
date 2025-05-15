@@ -2,8 +2,9 @@ import React, {  useState } from 'react'
 import { Play } from 'lucide-react'
 import yumFinds from '../images/yumFinds.png'
 import abstract from '../images/abstract.jpg'
+import Details from './Details'
 
-export default function Popular() {
+export default function Popular({open}) {
 const [following , setFollowing] = useState(true);
 
 
@@ -15,7 +16,7 @@ const handleFollow = () => {
 
 
   return (
-    <div className=' absolute bg-gray-900  p-4 left-64 mt-11  top-64  text-white'>
+    <div className={` absolute bg-gray-900  p-4 left-64 mt-11  top-64  text-white ${open ? "left-64" : "left-0"}`}>
       <div className='flex flex-col space-y-3'>
         <div className='flex flex-row'>
         <div><Play size={40}   className='rounded-3xl p-2 bg-green-700 text-black '/></div>
@@ -33,31 +34,23 @@ const handleFollow = () => {
     <div className='font-sans font-semibold text-xl mt-5 mb-5 hover:underline'>Popular</div>
 
     <div className='grid grid-cols-4 gap-2 items-  hover:bg-gray-800 p-2' >
-    <div  className='text-sm text-gray-300 '> 1</div>
-      <div className='text-sm text-gray-300'>Email:</div>
-      <div className='text-sm text-gray-300'>harleen.kukrejaa@gmail.com</div>
+      <Details details={["1", 'Email' , "harleen.kukrejaa@gmail.com"]}/>
       <div className=' text-sm text-gray-300 flex justify-evenly m-1'> 6:34</div>
    </div>
 
   <div className='grid grid-cols-4 gap-2 items-center  hover:bg-gray-800 p-2' >
-  <div className='text-sm text-gray-300 ' > 2 </div>
-    <div className='text-sm text-gray-300'>Phone:</div>
-    <div className='text-sm text-gray-300'>9654793003</div>
+      <Details details={["2","Phone", "9654793003"]}/>
     <div className='text-sm text-gray-300 flex justify-evenly m-1'> 3:34</div>
   </div>
 
   <div className='grid grid-cols-4 gap-2 items-center  hover:bg-gray-800 p-2 '>
-  <div className='text-sm text-gray-300'> 3</div>
-    <div className='text-sm text-gray-300'>LinkedIn:</div>
-    <div  className='text-sm text-gray-300'>harlleenn</div>
+  <Details details={["3","Linkedin", "harllenn"]}/>
     <div className='text-sm text-gray-300 flex justify-evenly m-1'> 2:84</div>
   </div>
 
   <div className='grid grid-cols-4 gap-2 items-center hover:bg-gray-800 p-2'>
-  <div className='text-sm text-gray-300 ' > 4</div>
-    <div className='text-sm text-gray-300'>Github:</div>
-    <div className='text-sm text-gray-300'>https:harlleenn</div>
-    <div className='text-sm text-gray-300 flex justify-evenly m-1'> 5:34</div>
+    <Details details={["4", "Github", "https://github.com/harlleenn"]}/>
+    <div className='text-sm text-gray-300 flex justify-evenly m-1'> 2:84</div>
   </div>
 </div>
       </div>

@@ -1,14 +1,26 @@
-import React from 'react'
-import { Home,  Search , Library  } from 'lucide-react';
-import Spotify from '../images/Spotify.png'
+import React, { useState } from 'react'
+import { Home,  Search , Library ,AlignJustify ,SquareChevronRight } from 'lucide-react';
+import Spotify from '../images/Spotify.png';
+import Skills from './Skills';
 
 export default function SideNav() {
+    const [open , setOpen] = useState(true)
+    const handleOpen = () => {
+        setOpen(!open)
+    }
   return (
 
-    <div className=' flex flex-col  w-64 fixed bottom-0  bg-blend-soft-light  bg-gray-950  text-white left-0   top-0 '>
-        <div className='m-5 text-base/8 '>
-       
+    <div className={` flex flex-col w-64 fixed bottom-0 
+     bg-gray-950  text-white left-0  top-0  transition-all duration-700 ease-in-out
+      ${open ? 'translate-x-0' : '-translate-x-52'}`}>
+     
+        <button onClick={handleOpen} className="absolute top-4 left-4 z-50 ">
+                {open ? <AlignJustify /> : <SquareChevronRight onClick={handleOpen}/>}
+        </button>
+        <div className='m-5 text-base/8 ' >
             <div className="font-sans font-semibold text-xl mt-3 mb-3  flex">
+
+    
             <img src={Spotify} alt='spotify' className='w-8 mr-2'/>
             Spotify 
             </div>  
@@ -36,26 +48,15 @@ export default function SideNav() {
                     <div className='mt-3 mb-3 text-color-white font-medium'>Skills</div>
                     <hr></hr>
                 </div>
-                <div >
-                    <div className='text-sm/6 text-gray-300'>React.js</div>
-                    <div  className='text-sm/6 text-gray-300'>Javascript</div>
-                    <div  className='text-sm/6 text-gray-300 '>Html</div>
-                    <div  className='text-sm/6 text-gray-300'>Css</div>
-                    <div  className='text-sm/6 text-gray-300' >Sql</div>
-                    <div  className='text-sm/6 text-gray-300' >Python</div>
-                </div>
+              <Skills items={["React.js", "Javascript", "Html", "Css" , "python" , "sql"]}/>
                 <div>
                     <hr></hr>
                     <div className='mt-3 mb-3 text-color-white font-medium'>Profiences</div>
                     <hr></hr>
                 </div>
-                <div>
-                    <div className='text-sm/6  text-gray-300'>English</div>
-                    <div className='text-sm/6  text-gray-300'>Problem-solving</div>
-                    <div className='text-sm/6  text-gray-300'>Adablity</div>
-
-                </div>
+               <Skills items={["Problem solving", "Creative"]}/>
         </div>
+        
     </div>
   )
 }
