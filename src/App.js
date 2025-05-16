@@ -3,7 +3,6 @@ import MusicPlayer from './components/MusicPlayer';
 import HomePage from './components/HomePage';
 import Popular from './components/Popular';
 import  {useState} from 'react';
-
 import './App.css';
 
 function App() {

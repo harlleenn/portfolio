@@ -2,26 +2,32 @@ import React, {  useState } from 'react'
 import { Play } from 'lucide-react'
 import yumFinds from '../images/yumFinds.png'
 import abstract from '../images/abstract.jpg'
-import Details from './SubComponents/Details'
+import Details from './SubComponents/Details';
+import { motion } from 'framer-motion';
 
 export default function Popular({open}) {
 const [following , setFollowing] = useState(true);
+
+
 
 const handleFollow = () => {
   setFollowing(!following)
 }
 
-  return (
-    <div className={` absolute bg-gray-900  p-4 left-64 mt-11 
-     top-64  text-white  transition-transform  tranform duration-700 ${open ? "translate-x-0" : "-translate-x-56"}`}>
 
-      <div className='flex flex-col space-y-3'>
+  return (
+    <motion.div 
+    animate={{x : open ? 0 : -200}}
+    transition={{ duration: 0.5, ease: 'easeInOut' }}
+    className={`absolute  bg-gray-900 p-4 left-0 right-0 ml-64 mt-11  top-64  text-white space-y-5 space-x-5  ${open ? "left-0 ri ease-in" : "w-full"}`}>
+
+      <div className='flex flex-col space-y-3 space-x-5'>
         <div className='flex flex-row'>
-        <div><Play size={40}   className='rounded-3xl p-2 bg-green-700 text-black '/></div>
+        <div><Play size={40}  className='rounded-3xl p-2 ml-4   bg-gradient-to-r from-green-400 to-green-90 text-black '/></div>
 
             <div className='flex ml-5 mr-10'><button className={`pl-8 pr-8 border-2 border-white transition duration-100 
             ${following ? " text-white" : "bg-green-700 text-white"}`}   
-                   onClick={handleFollow}>{following ? "Follow" : "Following"}</button>
+                   onMouseDown={handleFollow}>{following ? "Follow" : "Following"}</button>
             </div>
             <div className='flex  pl-8 pr-8 border-2 border-white'>
             <button >Download Cv</button>
@@ -42,12 +48,14 @@ const handleFollow = () => {
   </div>
 
   <div className='grid grid-cols-4 gap-2 items-center  hover:bg-gray-800 p-2 '>
-  <Details details={["3","Linkedin", "harllenn"]}/>
+  <div className='text-sm text-gray-300'>3</div>
+  <Details details={["Linkedin", "harllenn"]}/>
     <div className='text-sm text-gray-300 flex justify-evenly m-1'> 2:84</div>
   </div>
 
   <div className='grid grid-cols-4 gap-2 items-center hover:bg-gray-800 p-2'>
-    <Details details={["4", "Github", "https://github.com/harlleenn"]}/>
+  <div className='text-sm text-gray-300 '> 4 </div>
+    <Details details={[ "Github", "https://github.com/harlleenn"]}/>
     <div className='text-sm text-gray-300 flex justify-evenly m-1'> 2:84</div>
   </div>
 </div>
@@ -81,18 +89,18 @@ const handleFollow = () => {
         <div className=" mt-10 space-x-9">
           <div className="font-sans font-semibold text-xl  text-white  hover:underline mb-4">About</div>
             <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gray-800 rounded-lg p-4 relative overflow-visible hover:bg-gray-700">
-                  <div className="mb-5  rounded  flex items-center justify-center text-white"><img src={abstract} alt='abstract' /></div>
+                <div className="bg-gray-800 rounded-lg p-4 relative  hover:bg-gray-700">
+                  <div className="mb-5  rounded  flex items-center justify-center text-white"><img src={abstract} alt='abstract'/></div>
                     <div className="absolute top-4 p-4 m-4 right-4 bg-blue-500 text-white rounded-full
                         w-16 h-16 flex items-center justify-center text-center text-sm font-semibold">
                      1+ Years 
                     </div>
                     <div className="mb-2 text-sm ">
                     I'm a final-year BCA student with a strong enthusiasm for exploring technology and turning concepts into
-                    working code. Over the past two years, I’ve been actively learning web development, where I discovered a passion
+                    working code. Over the past two years, I have been actively learning web development, where I discovered a passion
                     for building responsive websites, developing front-end interfaces, and creating beautiful, user-friendly designs. I
                     enjoy transforming ideas into functional projects and tackling challenges step by step. As I prepare to enter the
-                    professional world, I’m excited to continue growing in tech and making meaningful contributions through my
+                    professional world, I am excited to continue growing in tech and making meaningful contributions through my
                     skills.
                     </div>
                 </div>
@@ -126,6 +134,6 @@ const handleFollow = () => {
       </div>
     </div>
   </div>
-</div>
+</motion.div>
   )
 }

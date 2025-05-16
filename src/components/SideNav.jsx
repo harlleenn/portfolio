@@ -1,21 +1,23 @@
 import React  from 'react'
-import { Home,  Search , Library ,AlignJustify ,SquareChevronRight } from 'lucide-react';
+import { Home,  Search , Library  ,SquareChevronRight,SquareChevronLeft  } from 'lucide-react';
 import Spotify from '../images/Spotify.png';
 import Skills from './SubComponents/Skills';
+import { motion } from 'framer-motion';
 
 export default function SideNav({open, handleOpen}) {
   
   return (
 
-    <div className={` flex flex-col w-64 fixed bottom-0 
-     bg-gray-950  text-white left-0  top-0  transition-transform transform duration-700 
-      ${open ? 'translate-x-0' : '-translate-x-52'}`}>
-        <button onClick={handleOpen} className="absolute top-4 left-4 z-50 ">
-                {open ? <AlignJustify /> :""}
+    <motion.div 
+    animate={{ x: open ? 0 : -200 }}  
+    transition={{ duration: 0.5, ease: 'easeInOut' }}
+    className= "flex flex-col w-64 fixed bottom-0  bg-gray-950  text-white left-0  top-0">
+
+        <button onClick={handleOpen} className="absolute top-4 right-5  ">
+                {open ? <SquareChevronLeft size={30} /> :<SquareChevronRight size={30}/>}
         </button> 
-        <button onClick={handleOpen} className="absolute top-4 right-6 ">
-                {open ? "" : <SquareChevronRight onClick={handleOpen}/>}
-        </button> 
+
+       
 
         <div className='m-5 text-base/8 ' >
         <div className="font-sans font-semibold text-xl mt-3 mb-3  flex">
@@ -57,6 +59,6 @@ export default function SideNav({open, handleOpen}) {
             <Skills items={["Problem solving", "Creative"]}/>
         </div>
         
-    </div>
+    </motion.div>
   )
 }
