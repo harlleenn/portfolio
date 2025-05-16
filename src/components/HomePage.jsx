@@ -1,8 +1,9 @@
 import React from 'react';
 import { BadgeCheck } from 'lucide-react';
-export default function HomePage() {
+export default function HomePage({open}) {
   return (
-    <div className="absolute left-64 bg-gray-800 right-0 top-0  text-white">
+    <div className={`absolute left-64 bg-gray-800 right-0 top-0  text-white 
+    transition-transform  transform duration-700 ${open ? "translate-x-0": "-translate-x-60"}`}>
       <div className="h-[300px] flex flex-col  justify-end px-10 pb-10">
         <div className=" flex items-center gap-2 mb-2">
           <BadgeCheck size={20} color="blue" />

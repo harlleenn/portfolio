@@ -2,21 +2,19 @@ import React, {  useState } from 'react'
 import { Play } from 'lucide-react'
 import yumFinds from '../images/yumFinds.png'
 import abstract from '../images/abstract.jpg'
-import Details from './Details'
+import Details from './SubComponents/Details'
 
 export default function Popular({open}) {
 const [following , setFollowing] = useState(true);
-
-
 
 const handleFollow = () => {
   setFollowing(!following)
 }
 
-
-
   return (
-    <div className={` absolute bg-gray-900  p-4 left-64 mt-11  top-64  text-white ${open ? "left-64" : "left-0"}`}>
+    <div className={` absolute bg-gray-900  p-4 left-64 mt-11 
+     top-64  text-white  transition-transform  tranform duration-700 ${open ? "translate-x-0" : "-translate-x-56"}`}>
+
       <div className='flex flex-col space-y-3'>
         <div className='flex flex-row'>
         <div><Play size={40}   className='rounded-3xl p-2 bg-green-700 text-black '/></div>
