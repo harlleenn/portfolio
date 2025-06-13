@@ -58,7 +58,8 @@ export default function SideNav({open, handleOpen}) {
                 </div>
             <Skills items={["Problem solving", "Creative"]}/>
         </div>
-        
+
     </motion.div>
   )
+
 }
