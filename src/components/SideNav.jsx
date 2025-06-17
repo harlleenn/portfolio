@@ -3,9 +3,13 @@ import { Home,  Search , Library  ,SquareChevronRight,SquareChevronLeft  } from 
 import Spotify from '../images/Spotify.png';
 import Skills from './SubComponents/Skills';
 import { motion } from 'framer-motion';
+import { useContext } from 'react';
+import ThemeContext from './ThemeContext';
+
+
 
 export default function SideNav({open, handleOpen}) {
-  
+  const {toggleTheme} = useContext(ThemeContext)
   return (
 
     <motion.div 
@@ -30,6 +34,8 @@ export default function SideNav({open, handleOpen}) {
             <hr></hr> 
 
                 <div className='flex flex-col mt-4  '>
+                    <div className='hover:bg-pink-700'><button onClick={toggleTheme}>Toggle</button>
+                    </div>
                     <div className='flex  hover:bg-gray-800 ' >  
                          <Home size={20} className='-mb-3' />
                          <span className='text-color-white font-medium ml-2 '>Home</span>

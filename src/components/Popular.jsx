@@ -5,6 +5,7 @@ import abstract from '../images/abstract.jpg'
 import Details from './SubComponents/Details';
 import { motion } from 'framer-motion';
 import ProjectDetails from './SubComponents/ProjectDetails';
+import AboutDetails from './SubComponents/AboutDetails';
 
 export default function Popular({open}) {
 const [following , setFollowing] = useState(true);
@@ -23,15 +24,19 @@ const handleFollow = () => {
     className={`absolute  bg-gray-900 p-4 left-0 right-0 ml-64 mt-11  top-64  text-white space-y-5 space-x-5  ${open ? "left-0 ri ease-in" : "w-full"}`}>
 
       <div className='flex flex-col space-y-3 space-x-5'>
-        <div className='flex flex-row'>
-        <div><Play size={40}  className='rounded-3xl p-2 ml-4   bg-gradient-to-r from-green-400 to-green-90 text-black '/></div>
 
-            <div className='flex ml-5 mr-10'><button className={`pl-8 pr-8 border-2 border-white transition duration-100 
+        <div className='flex flex-row'>
+        <div><Play size={40}  className='rounded-3xl p-2 ml-4  bg-gradient-to-r from-green-400 to-green-90 text-black '/></div>
+
+          <div className='flex ml-5 mr-10'>
+              <button className={`pl-8 pr-8 border-2 border-white transition duration-100 
             ${following ? " text-white" : "bg-green-700 text-white"}`}   
-                   onMouseDown={handleFollow}>{following ? "Follow" : "Following"}</button>
-            </div>
+                   onMouseDown={handleFollow}>{following ? "Follow" : "Following"}
+              </button>
+          </div>
             <div className='flex  pl-8 pr-8 border-2 border-white'>
-            <button >Download Cv</button>
+              {/* adding cv then being able to download */}
+            <button >Download Cv</button> 
             </div>
         </div>
         
